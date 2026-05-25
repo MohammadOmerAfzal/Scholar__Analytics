@@ -1,0 +1,269 @@
+/* ContactForm.css - Updated with color palette */
+
+:root {
+  --navy: #1d2433;
+  --teal: #5CC1D0;
+  --teal-dark: #4baab8;
+  --teal-light: #e8f6f8;
+  --gray-100: #f5f7fa;
+  --gray-200: #e4e8f0;
+  --gray-400: #9ca3af;
+  --gray-700: #4b5563;
+  --gray-800: #1f2937;
+  --error: #c53030;
+  --error-light: rgba(229, 62, 62, 0.07);
+}
+
+.cf-wrapper {
+  max-width: 760px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+}
+
+.cf-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+}
+
+.cf-field {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.cf-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  min-width: 130px;
+  flex-shrink: 0;
+  padding-top: 10px;
+}
+
+.cf-field input {
+  width: 100%;
+  max-width: 280px;
+  height: 42px;
+  padding: 0 12px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.cf-field input:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(92, 193, 208, 0.1);
+}
+
+.cf-field input::placeholder {
+  color: var(--gray-400);
+  font-size: 13px;
+}
+
+.cf-field--full {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cf-field--full label {
+  min-width: unset;
+  padding-top: 0;
+}
+
+.cf-field--full textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.cf-field--full textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(92, 193, 208, 0.1);
+}
+
+.cf-field--full textarea::placeholder {
+  color: var(--gray-400);
+  font-size: 13px;
+}
+
+.cf-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.cf-captcha {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--gray-100);
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+
+.cf-captcha-sum {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.cf-captcha input {
+  width: 80px;
+  height: 38px;
+  padding: 0 8px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.cf-captcha input:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(92, 193, 208, 0.1);
+}
+
+.cf-submit {
+  height: 44px;
+  padding: 0 32px;
+  border: none;
+  border-radius: 10px;
+  background: var(--teal);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
+  letter-spacing: 0.3px;
+}
+
+.cf-submit:hover:not(:disabled) {
+  background: var(--teal-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(92, 193, 208, 0.3);
+}
+
+.cf-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.cf-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cf-error {
+  font-size: 13px;
+  color: var(--error);
+  margin: 0;
+  padding: 10px 14px;
+  background: var(--error-light);
+  border: 1px solid rgba(229, 62, 62, 0.2);
+  border-radius: 8px;
+}
+
+.cf-success {
+  padding: 40px 24px;
+  text-align: center;
+  background: var(--teal-light);
+  border-radius: 16px;
+  border: 1px solid var(--teal);
+}
+
+.cf-success p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy);
+  margin: 0;
+}
+
+/* Required field indicator */
+.cf-field label[for="cf-firstName"],
+.cf-field label[for="cf-lastName"],
+.cf-field label[for="cf-email"],
+.cf-field--full label[for="cf-requirements"] {
+  position: relative;
+}
+
+.cf-field label[for="cf-firstName"]::after,
+.cf-field label[for="cf-lastName"]::after,
+.cf-field label[for="cf-email"]::after,
+.cf-field--full label[for="cf-requirements"]::after {
+  content: "*";
+  color: var(--error);
+  margin-left: 4px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .cf-wrapper {
+    padding: 16px;
+  }
+
+  .cf-field {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cf-field label {
+    min-width: unset;
+    padding-top: 0;
+  }
+
+  .cf-field input {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .cf-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cf-captcha {
+    justify-content: space-between;
+  }
+
+  .cf-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cf-captcha {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .cf-captcha-sum {
+    width: 100%;
+    text-align: center;
+  }
+}

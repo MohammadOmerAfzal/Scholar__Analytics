@@ -1,0 +1,549 @@
+:root {
+  --ap-navy: #1e2331;
+  --ap-teal: #5cc1d0;
+  --ap-bg: #ffffff;
+  --ap-card: #ffffff;
+  --ap-border: #e4e8ee;
+  --ap-text: #1e2331;
+  --ap-text-2: #4a5568;
+  --ap-text-3: #8898aa;
+}
+
+/* PAGE */
+.analysis-page {
+  min-height: 100vh;
+  background: var(--ap-bg);
+}
+
+/* PROGRESS BAR - Fixed top */
+.ap-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: var(--progress, 0%);
+  background: var(--ap-teal);
+  z-index: 9999;
+  transition: width 0.3s ease;
+}
+
+/* BREADCRUMB */
+.ap-breadcrumb-bar {
+  background: var(--ap-card);
+  border-bottom: 1px solid var(--ap-border);
+  padding: 12px 0;
+}
+
+.ap-breadcrumb {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-size: 13px;
+  color: var(--ap-text-3);
+}
+
+.ap-breadcrumb a {
+  color: var(--ap-teal);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ap-breadcrumb a:hover {
+  color: var(--ap-navy);
+  text-decoration: underline;
+}
+
+/* MAIN LAYOUT - Single column */
+.ap-article-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  padding: 30px 20px 80px;
+}
+
+/* ARTICLE - Main content area */
+.ap-article {
+  flex: 1;
+  min-width: 0;
+}
+
+/* HEADER */
+.ap-header {
+  margin-bottom: 30px;
+}
+
+/* Category Badge */
+.ap-cat-badge {
+  display: inline-block;
+  background: rgba(92, 193, 208, 0.1);
+  color: var(--ap-teal);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  transition: all 0.2s;
+}
+
+.ap-cat-badge:hover {
+  background: rgba(92, 193, 208, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Difficulty Badge */
+.ap-diff-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+/* Title */
+.ap-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--ap-text);
+  margin: 15px 0 10px;
+  line-height: 1.3;
+}
+
+/* Summary */
+.ap-summary {
+  color: var(--ap-text-2);
+  margin: 15px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* META with Separators */
+.ap-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--ap-text-3);
+  margin: 15px 0;
+}
+
+.ap-meta-sep {
+  color: var(--ap-border);
+  font-size: 14px;
+}
+
+.ap-meta-item {
+  color: var(--ap-text-2);
+}
+
+/* TAGS */
+.ap-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.ap-tag {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(92, 193, 208, 0.08);
+  color: var(--ap-teal);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.ap-tag:hover {
+  background: rgba(92, 193, 208, 0.15);
+  transform: translateY(-1px);
+}
+
+/* BOOKMARK BUTTON */
+.ap-bookmark-btn {
+  background: rgba(92, 193, 208, 0.1);
+  border: 1px solid var(--ap-border);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--ap-text-2);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 10px 0;
+}
+
+.ap-bookmark-btn:hover {
+  background: rgba(92, 193, 208, 0.15);
+  border-color: var(--ap-teal);
+}
+
+.ap-bookmark-btn.active {
+  background: var(--ap-teal);
+  color: white;
+  border-color: var(--ap-teal);
+}
+
+/* INLINE PROGRESS BAR */
+.ap-inline-progress {
+  width: 100%;
+  height: 3px;
+  background: var(--ap-border);
+  border-radius: 3px;
+  margin: 25px 0;
+  overflow: hidden;
+}
+
+.ap-inline-progress-fill {
+  height: 100%;
+  background: var(--ap-teal);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+/* CONTENT BLOCKS */
+.ap-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ap-block {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.ap-block:last-child {
+  border-bottom: none;
+}
+
+/* Block Label */
+.ap-block-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ap-teal);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* BACK LINK */
+.ap-back-link-wrapper {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid var(--ap-border);
+}
+
+.ap-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ap-teal);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: all 0.2s;
+}
+
+.ap-back-link:hover {
+  color: var(--ap-navy);
+  gap: 10px;
+}
+
+/* SIDEBAR - TABLE OF CONTENTS */
+.ap-toc {
+  width: 280px;
+  position: sticky;
+  top: 80px;
+  background: var(--ap-card);
+  border: 1px solid var(--ap-border);
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.ap-toc-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ap-teal);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ap-toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+.ap-toc-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ap-toc-list::-webkit-scrollbar-track {
+  background: var(--ap-border);
+  border-radius: 2px;
+}
+
+.ap-toc-list::-webkit-scrollbar-thumb {
+  background: var(--ap-teal);
+  border-radius: 2px;
+}
+
+.ap-toc-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-size: 13px;
+  color: var(--ap-text-2);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ap-toc-item:hover {
+  background: rgba(92, 193, 208, 0.08);
+  color: var(--ap-teal);
+  transform: translateX(2px);
+}
+
+.ap-toc-item.active {
+  background: rgba(92, 193, 208, 0.12);
+  color: var(--ap-teal);
+  font-weight: 500;
+}
+
+.ap-toc-icon {
+  font-size: 14px;
+  width: 24px;
+  display: inline-block;
+  text-align: center;
+}
+
+.ap-toc-label {
+  flex: 1;
+  line-height: 1.4;
+}
+
+/* SKELETON LOADER */
+.ap-skeleton-screen {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.ap-skel {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.ap-title-skel {
+  height: 40px;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.ap-line {
+  height: 16px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.ap-line.short {
+  width: 60%;
+}
+
+/* NOT FOUND */
+.ap-not-found {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--ap-text-2);
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .ap-article-layout {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .ap-toc {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .ap-toc-list {
+    max-height: 300px;
+  }
+
+  .ap-title {
+    font-size: 28px;
+  }
+
+  .ap-meta {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ap-title {
+    font-size: 24px;
+  }
+
+  .ap-summary {
+    font-size: 14px;
+  }
+
+  .ap-breadcrumb {
+    font-size: 11px;
+  }
+
+  .ap-toc {
+    padding: 15px;
+  }
+
+  .ap-cat-badge,
+  .ap-diff-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}
+
+/* PRINT STYLES */
+@media print {
+  .ap-progress-bar,
+  .ap-toc,
+  .ap-bookmark-btn,
+  .ap-back-link-wrapper,
+  .ap-breadcrumb-bar {
+    display: none;
+  }
+
+  .ap-article-layout {
+    padding: 0;
+    display: block;
+  }
+
+  .ap-article {
+    width: 100%;
+  }
+
+  .ap-title {
+    font-size: 24pt;
+  }
+
+  .ap-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+.ap-breadcrumb-sep {
+  margin: 0 8px;
+  color: var(--ap-text-3);
+  font-size: 14px;
+}
+
+/* Remove margin for first separator if needed */
+/* .ap-breadcrumb a:first-child + .ap-breadcrumb-sep {
+  margin-left: 0;
+} */
+/* Add to your AnalysisPage.css - White code block styling */
+
+/* Code Block Container - Pure White */
+.ap-content pre,
+.ap-block pre,
+.ap-content pre[class*="language-"] {
+  background: #ffffff !important;
+  border: 1px solid #e8ecf0 !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  margin: 20px 0 !important;
+  overflow-x: auto !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Code inside pre block */
+.ap-content pre code,
+.ap-block pre code {
+  background: transparent !important;
+  color: #1a2a3a !important;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+/* Inline code (code within text) - Also White */
+.ap-content code,
+.ap-block code,
+.ap-content :not(pre) > code {
+  background: #f8f9fa !important;
+  color: #5cc1d0 !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  font-family: 'SF Mono', 'Monaco', monospace !important;
+  font-size: 0.9em !important;
+  font-weight: 500 !important;
+  border: 1px solid #e8ecf0 !important;
+}
+
+/* Code block label/badge */
+.ap-block-label {
+  background: #f8f9fa !important;
+  color: #5cc1d0 !important;
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  display: inline-block !important;
+  margin-bottom: 12px !important;
+  border: 1px solid #e8ecf0 !important;
+}
+
+/* Optional: Add a subtle top accent bar */
+.ap-content pre {
+  border-top: 3px solid #5cc1d0 !important;
+}
+
+/* Scrollbar styling for code blocks */
+.ap-content pre::-webkit-scrollbar {
+  height: 6px;
+}
+
+.ap-content pre::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.ap-content pre::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.ap-content pre::-webkit-scrollbar-thumb:hover {
+  background: #5cc1d0;
+}

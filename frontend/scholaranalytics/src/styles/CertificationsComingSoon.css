@@ -1,0 +1,83 @@
+.certifications-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.certifications-container {
+  max-width: 600px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  margin: 20px auto;
+}
+
+.certifications-icon {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.certifications-icon svg {
+  width: 80px;
+  height: 80px;
+}
+
+.certifications-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.certifications-divider {
+  width: 80px;
+  height: 4px;
+  background: #5cc1d0;
+  margin: 0 auto 30px auto;
+  border-radius: 2px;
+}
+
+.certifications-message {
+  font-size: 18px;
+  color: #4a5568;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.certifications-badge {
+  display: inline-block;
+}
+
+.certifications-badge span {
+  background: #5cc1d0;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 24px;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .certifications-container {
+    padding: 40px 24px;
+  }
+  
+  .certifications-title {
+    font-size: 36px;
+  }
+  
+  .certifications-message {
+    font-size: 16px;
+  }
+}
