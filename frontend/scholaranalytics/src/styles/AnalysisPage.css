@@ -478,8 +478,8 @@
 .ap-block pre,
 .ap-content pre[class*="language-"] {
   background: #ffffff !important;
-  border: 1px solid #e8ecf0 !important;
-  border-radius: 12px !important;
+  /* border: 1px solid #e8ecf0 !important; */
+  /* border-radius: 12px !important; */
   padding: 20px !important;
   margin: 20px 0 !important;
   overflow-x: auto !important;
@@ -503,11 +503,11 @@
   background: #f8f9fa !important;
   color: #5cc1d0 !important;
   padding: 3px 8px !important;
-  border-radius: 6px !important;
+  /* border-radius: 6px !important; */
   font-family: 'SF Mono', 'Monaco', monospace !important;
   font-size: 0.9em !important;
   font-weight: 500 !important;
-  border: 1px solid #e8ecf0 !important;
+  /* border: 1px solid #e8ecf0 !important; */
 }
 
 /* Code block label/badge */
@@ -526,7 +526,7 @@
 
 /* Optional: Add a subtle top accent bar */
 .ap-content pre {
-  border-top: 3px solid #5cc1d0 !important;
+  /* border-top: 3px solid #5cc1d0 !important; */
 }
 
 /* Scrollbar styling for code blocks */

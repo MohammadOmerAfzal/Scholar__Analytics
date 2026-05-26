@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import '../styles/ContentBlock.css';
 
 // ── Text Block ──────────────────────────────────────────────
@@ -71,11 +71,12 @@ function CodeBlock({ content }) {
       </div>
       <SyntaxHighlighter
         language={getLanguage(content.codeLanguage)}
-        style={vscDarkPlus}
+        style={oneLight}
         customStyle={{
           margin: 0,
           borderRadius: 0,
-          background: '#1a1e2e',
+          padding: '22px 24px',
+          background: 'transparent',
           fontSize: '13.5px',
           fontFamily: "'JetBrains Mono', 'IBM Plex Mono', monospace",
         }}
